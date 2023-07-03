@@ -8,6 +8,8 @@ const InputComponent = () => {
     axios
     .post("http://127.0.0.1:3000/api/writeTheFile", { data: discordId })
     .then((response)=>console.log(response))
+
+    document.getElementById("Message").style.display="inline"
    };
 
   return (
@@ -48,6 +50,12 @@ const InputComponent = () => {
       >
         UPDATE
       </button>
+      
+      
+<div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 mt-3 hidden" role="alert" id='Message'>
+  <p class="font-bold">Informational message</p>
+  <p class="text-sm">Discord ID is updated successfully</p>
+</div>
     </div>
   );
 };
